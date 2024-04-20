@@ -9,7 +9,7 @@ import ru.manxix69.store.services.StoreService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/store/order")
 public class StoreController {
     private final StoreService storeService;
 
@@ -22,7 +22,7 @@ public class StoreController {
     }
 
     @GetMapping("/add")
-    public List<Integer> add(@RequestParam(name = "ID") List<Integer> ids) {
+    public boolean add(@RequestParam(name = "ID") List<Integer> ids) {
         return storeService.add(ids);
     }
 

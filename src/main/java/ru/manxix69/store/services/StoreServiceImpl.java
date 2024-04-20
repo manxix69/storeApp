@@ -14,7 +14,7 @@ public class StoreServiceImpl implements StoreService{
     }
 
     @Override
-    public List<Integer> add(@RequestParam(name = "ID") List<Integer> ids) {
+    public boolean add(List<Integer> ids) {
         return store.addItems(ids);
     }
 

@@ -9,9 +9,8 @@ import java.util.*;
 @SessionScope
 public class Store {
     private final List<Integer> items = new ArrayList<>();
-    public List<Integer> addItems(List<Integer> list) {
-        items.addAll(list);
-        return this.getItems();
+    public boolean addItems(List<Integer> list) {
+        return items.addAll(list);
     }
     public List<Integer> getItems() {
         return Collections.unmodifiableList(items);
