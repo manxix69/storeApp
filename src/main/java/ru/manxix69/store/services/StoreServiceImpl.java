@@ -7,19 +7,20 @@ import ru.manxix69.store.items.Store;
 import java.util.List;
 
 @Service
-public class StoreServiceImpl implements StoreService{
+public class StoreServiceImpl implements StoreService {
     private Store store;
+
     public StoreServiceImpl(Store store) {
         this.store = store;
     }
 
     @Override
-    public List<Integer> add(@RequestParam(name = "ID") List<Integer> ids) {
+    public boolean add(List<Integer> ids) {
         return store.addItems(ids);
     }
 
     @Override
-    public List<Integer>  get() {
+    public List<Integer> get() {
         return store.getItems();
     }
 

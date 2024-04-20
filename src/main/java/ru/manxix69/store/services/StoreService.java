@@ -1,12 +1,12 @@
 package ru.manxix69.store.services;
 
-import ru.manxix69.store.items.Store;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public interface StoreService {
-    List<Integer> add(List<Integer> ids);
+    boolean add(List<Integer> ids);
 
-    List<Integer>  get();
+    List<Integer> get();
 }
