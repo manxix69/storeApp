@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public interface StoreService {
-    boolean add(List<Integer> ids);
+    List<Integer> add(List<Integer> ids);
 
     List<Integer>  get();
 }
