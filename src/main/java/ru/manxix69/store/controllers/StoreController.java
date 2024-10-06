@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.manxix69.store.services.StoreService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/store/order")
 public class StoreController {
@@ -13,6 +15,21 @@ public class StoreController {
 
     public StoreController(StoreService storeService) {
         this.storeService = storeService;
+    }
+
+    @GetMapping("/greeting")
+    public String greeting() {
+        return "Hi!";
+    }
+
+    @GetMapping("/add")
+    public boolean add(@RequestParam(name = "ID") List<Integer> ids) {
+        return storeService.add(ids);
+    }
+
+    @GetMapping("/get")
+    public List<Integer> get() {
+        return storeService.get();
     }
 
 }
